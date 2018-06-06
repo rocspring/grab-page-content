@@ -9,7 +9,7 @@ const MAX_PAGE_NUM = 19;
 let pageNum = 1;
 let listCache = [];
 
-const grapPageContent = url => {
+const grapListContent = url => {
   let options = {
     uri: url,
     gzip: true
@@ -23,7 +23,7 @@ const grapPageContent = url => {
       listCache = listCache.concat(content);
       pageNum++;
       if (pageNum <= MAX_PAGE_NUM) {
-        grapPageContent(getPageUrl(pageNum));
+        grapListContent(getPageUrl(pageNum));
       } else {
         saveContent(listCache)
           .then(function (data) {
@@ -43,7 +43,7 @@ const getPageUrl = num => {
   return 'http://zhounianyang.blog.sohu.com/action/v_frag-ebi_4ccf5e4792-pg_' + num + '/entry/';
 };
 
-function getList() {
+const getList = () => {
   return new Promise(function (resolve, reject) {
     let listPath = 'dist/sohu-blog/list.json';
     let list;
@@ -51,7 +51,7 @@ function getList() {
       list = jetpack.read(listPath, 'json');
       resolve(list);
     } else {
-      grapPageContent(getPageUrl(pageNum))
+      grapListContent(getPageUrl(pageNum))
         .then(function (data) {
           resolve(data);
         })
