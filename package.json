@@ -1,0 +1,31 @@
+{
+  "name": "grap-page-content",
+  "version": "0.0.0",
+  "description": "grap web page content",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/sohu-blog/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wshp/grap-page-content.git"
+  },
+  "keywords": [
+    "grap",
+    "page",
+    "content"
+  ],
+  "author": "wangshaopeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wshp/grap-page-content/issues"
+  },
+  "homepage": "https://github.com/wshp/grap-page-content#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "fs-jetpack": "^1.3.0",
+    "iconv-lite": "^0.4.23",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  }
+}
