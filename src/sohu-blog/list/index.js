@@ -12,7 +12,7 @@ let listCache = [];
 const grapListContent = url => {
   let options = {
     uri: url,
-    gzip: true
+    gzip: true //返回的数据有gzip压缩,需要解压
   };
 
   return new Promise(function (resolve, reject) {
