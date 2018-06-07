@@ -7,7 +7,7 @@ module.exports = $ => {
   let content = '';
 
   // 处理多种不同格式的结构
-  if ($content.find('.item-content>div>span p') > 0) {
+  if ($content.find('.item-content>div>span p').length > 0) {
     $contentList =$content.find('.item-content>div>span p'); 
   } else if ($content.find('.item-content>div:first-child p').length > 0) {
     $contentList = $content.find('.item-content>div:first-child p'); 
